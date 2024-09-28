@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio Website using Vanilla HTML | akmalrmn</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <header id="header">
+    <div class="header">
+      <a href="#" class="logo">
+        <span class="logo-akmal">akmal</span><span class="logo-rmn">rmn.</span>
+      </a>
+      <nav class="navbar">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="home">
+      <div class="main-content">
+        <h1>
+          <span class="hi">Hi, I'm </span><span class="akmal">Akmal</span>
+        </h1>
+        <h3>
+          <span class="cs">CS Student </span><span class="itb">@ITB</span>
+        </h3>
+        <div class="btn-box">
+          <a href="CV.pdf" download="akmalrmn_CV.pdf">Download CV</a>
+        </div>
+      </div>
+
+      <div class="links">
+        <a href="https://www.linkedin.com/in/akmalrmn" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+        <a href="https://www.instagram.com/akmalrmn" target="_blank"><i class='bx bxl-instagram' ></i></a>
+        <a href="https://medium.com/@akmalramadannn" target="_blank"><i class='bx bxl-medium' ></i></a>
+      </div>
+    </section>
+    <span class="img"></span>
+    
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-col-1">
+          <img src="selfie.jpg" alt="akmalrmn">
+        </div>
+        <div class="about-col-2">
+            <h2>About Me</h2>
+            <p>Hi, I'm Mohammad Akmal Ramadan, you can call me Akmal. I just got into my junior year in Computer Science at Bandung Institute of Technology. I'm really passionate in technology development, currently pursuing to be a good software engineer, cyber security, or even in machine learning (doesn't really know what i want to be yet 😁)</p>
+            <div class="tab">
+              <button class="links-about active" onclick="opentab('skills')">Skils/Languanges</button>
+              <button class="links-about" onclick="opentab('experience')">Experience</button>
+              <button class="links-about" onclick="opentab('education')">Education</button>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Web development</span><br>React, JavaScript, Django, Flask, Postman, mongodb</li>
+                <li><span>Competitive Programming</span><br>Python, C, C++, Java</li>
+                <li><span>Data Annotator</span><br>YOLO, roboflow, CVAT</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>OSKM ITB 2023</span><br>Frontend Developer<br>
+                  <ul>
+                    <li>Developed a login and forgot password page using NodeJS.</li>
+                    <li>Authenticated 1500+ users with separated admin and user pages through login page using PostgreSQL.</li>
+                  </ul>
+                </li>
+                <li>
+                  <span>Google Developer Student Club ITB</span><br>Machine Learning and Artificial Intelligence Student<br>
+                  <ul>
+                    <li>Capable of working with database management systems (DBMS), including MySQL.</li>
+                    <li>Developed an application using natural language processing (NLP) techniques.</li>
+                  </ul>
+                </li>
+                <li>
+                  <span>Digistar Class 2024 by Telkom Indonesia</span><br>Hacker- Backend student<br>
+                  <ul>
+                    <li>Selected as 1 of 500 from 12,500+ applicants.</li>
+                    <li>Participated in 3-days soft skill classes to improve public speaking, team work, career path, and many more.</li>
+                    <li>Coached by one of Telkom Indonesia developer to improved backend skill and knowledge.</li>
+                  </ul>
+                </li>
+                <li>
+                  <span>Bakti BCA Scholarship</span><br>Awardee<br>
+                  <ul>
+                    <li>Selected as 1 of 40 ITB students to receive this prestigious scholarship through jalur prestasi.</li>
+                    <li>Currently participating in a comprehensive self-development program with 50+ hours of training.</li>
+                    <li>Leading a team of 5 members in the creation and implementation of a social project.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>SMAN 3 Bandung</span><br>2019 -- 2022</li>
+                <li><span>Computer Science at ITB</span><br>2022 -- 2026 (expected graduation)</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </section>
+    <!-- Contact -->
+     <section class="contact" id="contact">
+       <h2>Contact Me</h2>
+        <div class="container">
+          <div class="left-contact">
+            <p>✉️ akmalramadannn@gmail.com</p>
+            <p>📲 +62 8112447589</p>
+          </div>
+          <div class="right-contact">
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/akmalrmn" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+              <a href="https://www.instagram.com/akmalrmn" target="_blank"><i class='bx bxl-instagram' ></i></a>
+              <a href="https://medium.com/@akmalramadannn" target="_blank"><i class='bx bxl-medium' ></i></a>
+            </div>
+          </div>
+      </div>
+     </section>
+    </main>
+
+    <script>
+      var tabLinks = document.getElementsByClassName("links-about");
+      var tabContents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabName) {
+        for (var i = 0; i < tabContents.length; i++) {
+          tabContents[i].style.display = "none";
+        }
+        for (var i = 0; i < tabLinks.length; i++) {
+          tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        event.currentTarget.className += " active";
+      }
+    </script>
+</body>
+</html>
